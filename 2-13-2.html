@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rolling banner</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        ul,
+        ol,
+        li {
+            list-style: none;
+        }
+
+        .img_rolling {
+            width: 300%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border: 1px solid red;
+            display: flex;
+            justify-content: space-between;
+            animation: move 30s linear infinite;
+        }
+
+        .img_rolling li {
+            border: 1px solid blue;
+            padding: 10px 20px;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(-100%);
+
+            }
+
+            50.1% {
+                transform: translateX(100%);
+
+            }
+
+            100% {
+                transform: translateX(0);
+
+            }
+        }
+
+        .box{
+            margin: 100px 0 ;
+            border-top: 1px solid royalblue;
+            border-bottom: 1px solid royalblue;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="img_rolling">
+        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+        <li><a href="#">consectetur adipisicing elit</a></li>
+        <li><a href="#">Molestias tenetur rem</a></li>
+        <li><a href="#">labore nulla recusandae debitis</a></li>
+        <li><a href="#">qui maiores illum</a></li>
+        <li><a href="#">quisquam deleniti</a></li>
+        <li><a href="#">tempore quos repellendus ex</a></li>
+        <li><a href="#">eveniet culpa ab dolor cumque soluta</a></li>
+    </ul><!-- img_rolling -->
+    <marquee class="box" scrollamount="5" direction="right" behavior="alternate">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic assumenda aspernatur aut, accusantium, cum sequi
+        sint atque ducimus reprehenderit excepturi eos sapiente asperiores nemo eum veniam soluta velit, voluptatum
+        fugiat!
+    </marquee>
+</body>
+
+</html>
